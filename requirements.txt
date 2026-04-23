@@ -3,8 +3,11 @@
 #  Python dependencies
 # ════════════════════════════════════════════════════════════════════════════
 
-# ── AI ───────────────────────────────────────────────────────────────────────
-anthropic>=0.39.0          # Claude API — all nine research agents
+# ── AI — Anthropic ────────────────────────────────────────────────────────────
+anthropic>=0.39.0          # Claude API — Fundamental Analyst (Opus 4.7), Manager
+
+# ── AI — OpenAI ───────────────────────────────────────────────────────────────
+openai>=1.30.0             # World Researcher (WR-01) — GPT-4.1 for web-grounded research
 
 # ── Frontend ─────────────────────────────────────────────────────────────────
 streamlit>=1.32.0          # Web UI — single-page app, no build step required
@@ -14,7 +17,11 @@ plotly>=5.20.0             # Interactive price charts and indicator overlays
 duckdb>=1.0.0              # Embedded analytical DB — price history, report cache
 
 # ── Market Data ──────────────────────────────────────────────────────────────
-yfinance>=0.2.40           # OHLCV, financials, metadata (15-20 min delayed)
+alpaca-py>=0.26.0          # Alpaca API — real-time + historical price data
+yfinance>=0.2.40           # yfinance — fallback for fundamentals and metadata
+
+# ── Notifications ─────────────────────────────────────────────────────────────
+twilio>=9.0.0              # WhatsApp notifications via Twilio
 
 # ── Data Processing ───────────────────────────────────────────────────────────
 pandas>=2.2.0              # DataFrame manipulation for price and fundamentals data
