@@ -130,8 +130,7 @@ Phase 6: Launch            ⬜ NOT STARTED
 Project-01/
 │
 ├── app/                          # Streamlit application
-│   ├── main.py                   # Entry point, sidebar, session state
-│   └── pages/                    # Multi-page app sections
+│   └── main.py                   # Entry point, sidebar, session state
 │
 ├── agents/                       # Agent definitions (prompts via env)
 │   ├── base_agent.py             # Shared Claude API wrapper, token tracking, retry
@@ -142,17 +141,26 @@ Project-01/
 │
 ├── data/                         # Data layer
 │   ├── pipeline.py               # Fetch → validate → cache orchestration
-│   ├── schema.py                 # DuckDB table definitions (incl. world_research)
-│   └── cache.py                  # Cache read/write helpers
+│   ├── schema.py                 # DuckDB table definitions
+│   └── db/                       # Local DuckDB database files
 │
 ├── config/
 │   ├── settings.py               # All env vars: Anthropic, OpenAI, Alpaca, Twilio
 │   ├── ticker_universe.py        # NYSE/NASDAQ universe filters
 │   └── prompts.py                # Prompt loader (keys map to private repo files)
 │
+├── tests/                        # Test suite
 ├── .env.example                  # Required environment variables (template)
-└── requirements.txt              # anthropic, openai, alpaca-py, twilio, duckdb, ...
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE
+├── railway.toml                  # Railway deployment config
+├── requirements.txt
+├── runtime.txt
+└── README.md
 ```
+
+> Agents not yet built (coming in Phase 2–3): Business Analyst, Finance Researcher, Technical Analyst, QA Tester, Project Manager, AI Analyst.
 
 ---
 
