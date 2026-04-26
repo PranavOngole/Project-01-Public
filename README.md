@@ -164,32 +164,6 @@ Project-01/
 
 ---
 
-## Environment Variables
-
-Copy `.env.example` to `.env` and fill in:
-
-```
-# AI
-ANTHROPIC_API_KEY=
-OPENAI_API_KEY=
-
-# Market Data
-ALPACA_API_KEY=
-ALPACA_SECRET_KEY=
-
-# Notifications
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
-TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
-TWILIO_WHATSAPP_TO=whatsapp:+1XXXXXXXXXX
-WHATSAPP_NOTIFICATIONS_ENABLED=false
-
-# Prompts (point to private repo locally)
-PROMPT_DIR=/path/to/Project-01-Private/prompts
-```
-
----
-
 ## Stock Universe
 
 Analysis is scoped to **NYSE and NASDAQ-listed equities** meeting all of the following criteria:
