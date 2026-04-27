@@ -36,7 +36,6 @@ st.set_page_config(
 )
 
 from config import settings
-from data.schema import init_db, get_connection
 from data.pipeline import run_full_pipeline, PipelineResult, StockCard
 
 logging.basicConfig(
@@ -46,15 +45,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 EST = ZoneInfo("America/New_York")
-
-# ── DB init (idempotent — safe every startup) ─────────────────────────────────
-
-@st.cache_resource
-def _init_db() -> None:
-    init_db()
-
-_init_db()
-
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
 
@@ -286,43 +276,8 @@ def _exchange_display(code: str) -> str:
 
 @st.cache_data(ttl=900, show_spinner=False)
 def _fetch(ticker: str) -> PipelineResult:
-    """Pull from yfinance + store in DuckDB. Cached 15 min per ticker."""
+    """Pull from yfinance. Cached 15 min per ticker via Streamlit cache."""
     return run_full_pipeline(ticker)
-
-
-def _get_fundamentals(ticker: str) -> dict | None:
-    """Read latest fundamentals snapshot from DuckDB (stored by pipeline)."""
-    conn = get_connection()
-    try:
-        row = conn.execute("""
-            SELECT
-                pe_ratio_ttm, eps_ttm,
-                profit_margin, roe, debt_to_equity, free_cash_flow,
-                analyst_recommendation, number_of_analysts,
-                analyst_target_mean
-            FROM stock_fundamentals
-            WHERE ticker = ?
-            ORDER BY snapshot_date DESC
-            LIMIT 1
-        """, [ticker]).fetchone()
-        if not row:
-            return None
-        return {
-            "pe_ratio":            row[0],
-            "eps":                 row[1],
-            "profit_margin":       row[2],
-            "roe":                 row[3],
-            "debt_to_equity":      row[4],
-            "free_cash_flow":      row[5],
-            "analyst_rec":         (row[6] or "").upper(),
-            "analyst_count":       row[7],
-            "analyst_target_mean": row[8],
-        }
-    except Exception as exc:
-        logger.warning("Fundamentals DB read failed for %s: %s", ticker, exc)
-        return None
-    finally:
-        conn.close()
 
 
 # ── UI components ─────────────────────────────────────────────────────────────
@@ -348,7 +303,7 @@ def render_disclaimer() -> None:
         st.markdown(_DISCLAIMER_FULL)
 
 
-def render_stock_card(card: StockCard, fund: dict | None) -> None:
+def render_stock_card(card: StockCard) -> None:
     """Render the full data display for a valid ticker."""
 
     # ── Identity row ──────────────────────────────────────────────────────────
@@ -365,7 +320,7 @@ def render_stock_card(card: StockCard, fund: dict | None) -> None:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Price row (st.metric handles +/- coloring automatically) ─────────────
+    # ── Price row ─────────────────────────────────────────────────────────────
     p1, p2, p3, p4 = st.columns(4)
     with p1:
         st.metric(
@@ -378,13 +333,12 @@ def render_stock_card(card: StockCard, fund: dict | None) -> None:
     with p3:
         st.metric(label="Market Cap", value=_fmt_large(card.market_cap))
     with p4:
-        if fund and fund.get("analyst_rec"):
-            rec = fund["analyst_rec"]
-            count = fund.get("analyst_count") or ""
-            target = _fmt_price(float(fund["analyst_target_mean"])) if fund.get("analyst_target_mean") else "N/A"
+        if card.analyst_recommendation:
+            count = card.number_of_analysts or ""
+            target = _fmt_price(card.analyst_target_mean) if card.analyst_target_mean else "N/A"
             st.metric(
                 label=f"Analyst Consensus ({count} analysts)",
-                value=rec,
+                value=card.analyst_recommendation,
                 delta=f"Target: {target}",
             )
         else:
@@ -396,37 +350,24 @@ def render_stock_card(card: StockCard, fund: dict | None) -> None:
     st.markdown('<div class="section-label">Market Data</div>', unsafe_allow_html=True)
     c1, c2, c3, c4 = st.columns(4)
 
-    hi = _fmt_price(card.fifty_two_wk_high)
-    lo = _fmt_price(card.fifty_two_wk_low)
-
-    _card(c1, "52-Week High", hi)
-    _card(c2, "52-Week Low",  lo)
-
-    if fund:
-        pe  = f"{float(fund['pe_ratio']):.2f}x" if fund.get("pe_ratio") else "N/A"
-        eps = f"${float(fund['eps']):.2f}"       if fund.get("eps")      else "N/A"
-        _card(c3, "P/E Ratio (TTM)", pe)
-        _card(c4, "EPS (TTM)",       eps)
-    else:
-        _card(c3, "P/E Ratio (TTM)", "N/A")
-        _card(c4, "EPS (TTM)",       "N/A")
+    _card(c1, "52-Week High", _fmt_price(card.fifty_two_wk_high))
+    _card(c2, "52-Week Low",  _fmt_price(card.fifty_two_wk_low))
+    _card(c3, "P/E Ratio (TTM)", f"{card.pe_ratio_ttm:.2f}x" if card.pe_ratio_ttm else "N/A")
+    _card(c4, "EPS (TTM)",       f"${card.eps_ttm:.2f}" if card.eps_ttm else "N/A")
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Fundamentals preview row ───────────────────────────────────────────────
-    if fund:
+    # ── Fundamentals preview row ──────────────────────────────────────────────
+    if any([card.profit_margin, card.roe, card.debt_to_equity, card.free_cash_flow]):
         st.markdown('<div class="section-label">Fundamentals Preview</div>', unsafe_allow_html=True)
         f1, f2, f3, f4 = st.columns(4)
 
-        pm  = _fmt_pct(fund.get("profit_margin"))
-        roe = _fmt_pct(fund.get("roe"))
-        de  = f"{float(fund['debt_to_equity']):.1f}x" if fund.get("debt_to_equity") else "N/A"
-        fcf = _fmt_large(fund.get("free_cash_flow"))
+        de = f"{card.debt_to_equity:.1f}x" if card.debt_to_equity else "N/A"
 
-        _card(f1, "Profit Margin",    pm,  "Net income / Revenue")
-        _card(f2, "Return on Equity", roe, "Net income / Equity")
-        _card(f3, "Debt / Equity",    de,  "Lower is healthier")
-        _card(f4, "Free Cash Flow",   fcf, "Operating CF − CapEx")
+        _card(f1, "Profit Margin",    _fmt_pct(card.profit_margin), "Net income / Revenue")
+        _card(f2, "Return on Equity", _fmt_pct(card.roe),           "Net income / Equity")
+        _card(f3, "Debt / Equity",    de,                           "Lower is healthier")
+        _card(f4, "Free Cash Flow",   _fmt_large(card.free_cash_flow), "Operating CF − CapEx")
 
         st.markdown("<br>", unsafe_allow_html=True)
 
@@ -574,8 +515,7 @@ def main() -> None:
 
     if result is not None:
         if result.success and result.stock_card:
-            fund = _get_fundamentals(result.ticker)
-            render_stock_card(result.stock_card, fund)
+            render_stock_card(result.stock_card)
         else:
             render_error(result)
     else:

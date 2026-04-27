@@ -1,6 +1,6 @@
 """
 data/pipeline.py
-yfinance data pipeline — validation, OHLCV pull, fundamentals pull, DuckDB storage.
+yfinance data pipeline — validation, OHLCV pull, fundamentals pull.
 
 Entry point for Streamlit: call run_full_pipeline(ticker) and check the returned
 PipelineResult. If .success is True, .stock_card has everything the UI needs.
@@ -12,8 +12,8 @@ Rules (BRD v1.0 locked):
   - Quote type must be EQUITY
   - yfinance is 15-20 min delayed — NEVER say "real-time"
 
-Every pull is logged to api_usage with:
-  agent_name='data_engineer', api_provider='yfinance', cost=$0
+Phase 4 note: PostgreSQL (Railway) will be wired in to persist analysis runs,
+agent outputs, cost tracking, and report cache. No DB in Phase 3.
 """
 
 from __future__ import annotations
@@ -34,7 +34,6 @@ if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
 
 from config import settings
-from data.schema import get_connection
 
 logger = logging.getLogger(__name__)
 
@@ -75,6 +74,16 @@ class StockCard:
     fifty_two_wk_high: float | None
     fifty_two_wk_low: float | None
     fetched_at: datetime              # UTC; convert to EST in UI
+    # Fundamentals — sourced directly from yfinance info
+    pe_ratio_ttm: float | None = None
+    eps_ttm: float | None = None
+    profit_margin: float | None = None
+    roe: float | None = None
+    debt_to_equity: float | None = None
+    free_cash_flow: int | None = None
+    analyst_recommendation: str | None = None
+    number_of_analysts: int | None = None
+    analyst_target_mean: float | None = None
 
     @property
     def market_cap_fmt(self) -> str:
@@ -159,9 +168,11 @@ def _market_cap_category(mc: int | None) -> str | None:
     return "small"
 
 
-# ── DuckDB storage ────────────────────────────────────────────────────────────
+# ── Phase 4 placeholder ───────────────────────────────────────────────────────
+# PostgreSQL storage functions go here when Phase 4 ships.
+# Tables: analysis_runs, stock_prices, stock_fundamentals, api_usage, etc.
 
-def _store_ohlcv(ticker: str, hist: pd.DataFrame, pulled_at: datetime) -> int:
+def _UNUSED_store_ohlcv(ticker: str, hist: pd.DataFrame, pulled_at: datetime) -> int:
     """
     Upsert 2 years of OHLCV data into stock_prices.
     Returns number of rows processed.
@@ -268,7 +279,7 @@ def _store_ohlcv(ticker: str, hist: pd.DataFrame, pulled_at: datetime) -> int:
         conn.close()
 
 
-def _store_fundamentals(ticker: str, info: dict, pulled_at: datetime) -> None:
+def _UNUSED_store_fundamentals(ticker: str, info: dict, pulled_at: datetime) -> None:
     """Upsert one fundamentals snapshot into stock_fundamentals."""
     today = date.today()
     now = datetime.now(timezone.utc)
@@ -380,7 +391,7 @@ def _store_fundamentals(ticker: str, info: dict, pulled_at: datetime) -> None:
         conn.close()
 
 
-def _log_data_pull(
+def _UNUSED_log_data_pull(
     ticker: str,
     triggered_by: str,
     started_at: datetime,
@@ -454,18 +465,13 @@ def run_full_pipeline(ticker: str, triggered_by: str = "user_analysis") -> Pipel
         )
 
     # ── 2. Fetch yfinance info ────────────────────────────────────────────────
-    started_at = datetime.now(timezone.utc)
     t0 = time.monotonic()
 
     try:
         yf_ticker = yf.Ticker(ticker)
         info = yf_ticker.info
     except Exception as exc:
-        latency_ms = int((time.monotonic() - t0) * 1000)
         logger.warning("yfinance info fetch failed for %s: %s", ticker, exc)
-        _log_data_pull(ticker, triggered_by, started_at,
-                       datetime.now(timezone.utc), latency_ms, 0,
-                       is_error=True, error_message=str(exc))
         return PipelineResult(
             success=False, ticker=ticker,
             error=f"Couldn't retrieve data for '{ticker}'. Check your connection and try again.",
@@ -522,10 +528,6 @@ def run_full_pipeline(ticker: str, triggered_by: str = "user_analysis") -> Pipel
     try:
         hist = yf_ticker.history(period="2y", auto_adjust=False)
     except Exception as exc:
-        latency_ms = int((time.monotonic() - t0) * 1000)
-        _log_data_pull(ticker, triggered_by, started_at,
-                       datetime.now(timezone.utc), latency_ms, 0,
-                       is_error=True, error_message=str(exc))
         return PipelineResult(
             success=False, ticker=ticker,
             error=f"Couldn't fetch price history for '{ticker}'. Try again in a moment.",
@@ -544,31 +546,9 @@ def run_full_pipeline(ticker: str, triggered_by: str = "user_analysis") -> Pipel
             error_type="history",
         )
 
-    # ── 8. Store in DuckDB ────────────────────────────────────────────────────
+    # ── 8. Build stock card ───────────────────────────────────────────────────
     fetched_at = datetime.now(timezone.utc)
-    rows_stored = 0
-
-    try:
-        rows_stored = _store_ohlcv(ticker, hist, fetched_at)
-        _store_fundamentals(ticker, info, fetched_at)
-        logger.info("Stored %d OHLCV rows + fundamentals for %s", rows_stored, ticker)
-    except Exception as exc:
-        latency_ms = int((time.monotonic() - t0) * 1000)
-        logger.error("DuckDB write failed for %s: %s", ticker, exc)
-        _log_data_pull(ticker, triggered_by, started_at,
-                       datetime.now(timezone.utc), latency_ms, rows_stored,
-                       is_error=True, error_message=str(exc))
-        return PipelineResult(
-            success=False, ticker=ticker,
-            error="Data fetched but database write failed. Try again.",
-            error_type="db_error",
-        )
-
     latency_ms = int((time.monotonic() - t0) * 1000)
-    _log_data_pull(ticker, triggered_by, started_at,
-                   datetime.now(timezone.utc), latency_ms, rows_stored)
-
-    # ── 9. Build stock card ───────────────────────────────────────────────────
     # Prefer regularMarketPrice (15-20 min delayed) over close
     current_price = _safe_float(
         info.get("regularMarketPrice") or info.get("currentPrice") or info.get("previousClose")
@@ -601,11 +581,20 @@ def run_full_pipeline(ticker: str, triggered_by: str = "user_analysis") -> Pipel
         fifty_two_wk_high=_safe_float(info.get("fiftyTwoWeekHigh")),
         fifty_two_wk_low=_safe_float(info.get("fiftyTwoWeekLow")),
         fetched_at=fetched_at,
+        pe_ratio_ttm=_safe_float(info.get("trailingPE")),
+        eps_ttm=_safe_float(info.get("trailingEps")),
+        profit_margin=_safe_float(info.get("profitMargins")),
+        roe=_safe_float(info.get("returnOnEquity")),
+        debt_to_equity=_safe_float(info.get("debtToEquity")),
+        free_cash_flow=_safe_int(info.get("freeCashflow")),
+        analyst_recommendation=(info.get("recommendationKey") or "").upper() or None,
+        number_of_analysts=_safe_int(info.get("numberOfAnalystOpinions")),
+        analyst_target_mean=_safe_float(info.get("targetMeanPrice")),
     )
 
     logger.info(
         "Pipeline complete: %s | price=$%.2f | latency=%dms | rows=%d",
-        ticker, current_price or 0, latency_ms, rows_stored,
+        ticker, current_price or 0, latency_ms,
     )
 
     return PipelineResult(success=True, ticker=ticker, stock_card=stock_card)

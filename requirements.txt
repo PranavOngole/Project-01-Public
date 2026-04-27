@@ -14,14 +14,10 @@ streamlit>=1.32.0          # Web UI — single-page app, no build step required
 plotly>=5.20.0             # Interactive price charts and indicator overlays
 
 # ── Database ─────────────────────────────────────────────────────────────────
-duckdb>=1.0.0              # Embedded analytical DB — price history, report cache
+# Phase 4: psycopg2-binary + sqlalchemy for PostgreSQL on Railway
 
 # ── Market Data ──────────────────────────────────────────────────────────────
-alpaca-py>=0.26.0          # Alpaca API — real-time + historical price data
-yfinance>=0.2.40           # yfinance — fallback for fundamentals and metadata
-
-# ── Notifications ─────────────────────────────────────────────────────────────
-twilio>=9.0.0              # WhatsApp notifications via Twilio
+yfinance>=0.2.40           # Price data, fundamentals, metadata
 
 # ── Data Processing ───────────────────────────────────────────────────────────
 pandas>=2.2.0              # DataFrame manipulation for price and fundamentals data

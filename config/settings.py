@@ -83,9 +83,7 @@ WORLD_RESEARCHER_MODEL: str     = os.getenv("WORLD_RESEARCHER_MODEL",     "gpt-4
 
 
 # ── Database ──────────────────────────────────────────────────────────────────
-
-DUCKDB_PATH: str = os.getenv("DUCKDB_PATH", "data/db/project01.duckdb")
-
+# Phase 4: DATABASE_URL = os.getenv("DATABASE_URL", "") for Railway Postgres
 
 # ── Budget Controls ───────────────────────────────────────────────────────────
 

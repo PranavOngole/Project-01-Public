@@ -125,3 +125,4 @@ docs/_build/
 /site
 celerybeat-schedule
 celerybeat.pid
+data/db/
