@@ -2,8 +2,9 @@
 
 **Investor with Intelligence.**
 
-The gap between institutional and individual investors is not a gap in intelligence.
-It is a gap in infrastructure. Project-01 closes that gap.
+The markets generate more information than any human can process. Earnings transcripts, SEC filings, analyst revisions, insider moves, macro shifts, options flow — all of it arriving simultaneously, all of it demanding a decision. Most of it is noise. The rest is signal. The problem is knowing which is which.
+
+Project-01 translates that noise into intelligence. It surfaces what matters, explains what it means, and gives the investor the clarity to act — without the overhead of building a research desk.
 
 **Live:** https://project-01-terminal.vercel.app
 
@@ -11,53 +12,35 @@ It is a gap in infrastructure. Project-01 closes that gap.
 
 ## What It Is
 
-A research and trading platform built for investors who take their work seriously.
+A research and execution platform that puts institutional-grade intelligence in front of the individual investor.
 
-Most tools built for individuals are either too simple to be useful or too expensive to be accessible. Bloomberg costs $24,000 a year. Consumer apps are designed for engagement, not for decisions.
-Project-01 is built for the investor in between: serious about their process, unwilling to pay for infrastructure they shouldn't need to build themselves.
+Not a signals service. Not a black box that places trades while you sleep. The investor remains the decision-maker. Project-01 is the infrastructure behind the decision — the research that would take a team of analysts half a day, delivered in seconds, organized so the most important thing is always the first thing you see.
 
-The investor makes every decision. The platform makes sure they have everything they need to make it well.
-
----
-
-## The Terminal
-
-Open any supported ticker and get a complete research view on one screen.
-
-- Price action with event markers: earnings dates, Fed decisions, macro data points
-- Options flow: unusual activity, open interest changes, IV rank
-- Peer comparison with industry context and relative strength
-- Insider activity and institutional position changes
-- Fundamental verdict: intrinsic value, moat assessment, risk flags
-- Live time and sales tape
-- Compare mode: split-screen any two tickers side by side
-
-No tabs. No digging. The most important signal is surfaced first.
+For investors who want to take positions with the same depth of conviction a professional fund would require: this is the tool.
 
 ---
 
-## The Strategy
+## How It Works
 
-Configure exactly what the trading system will do, and exactly what it will not.
+**TERMINAL** — Pull up any ticker and get the complete picture on one screen.
 
-- Define your universe: S&P 500, sector ETFs, or a custom watchlist
-- Set your entry and exit conditions
-- Set hard guardrails: position size, daily drawdown limit, sector concentration, blackout days
-- The system executes within those constraints and nothing outside them
+Price action with annotated events. Options flow and unusual activity. Insider and institutional moves. A peer comparison that shows where this company stands in its cohort. A fundamental verdict with intrinsic value estimate and risk flags. Everything you would want before making a decision — already pulled, already structured, already ranked by what matters most.
 
-A strict gate prevents live trading until the strategy has been validated in simulation and then in paper trading. The investor promotes it; the system does not promote itself.
+**STRATEGY** — Define your investment criteria once. The system executes against them.
 
----
+Set the universe of stocks to watch. Set entry conditions: what a company needs to look like before you'd consider it. Set exit conditions. Set hard limits on position size, drawdown, and sector exposure. The system monitors every stock in your universe, flags when your criteria are met, and executes trades within your guardrails — only when you've authorized it to.
 
-## The Cockpit
+This is not automated trading that replaces judgment. It is systematic execution of judgment you have already expressed. The investor defines the rules. The system enforces them with the consistency a human cannot maintain at 3 AM when a position moves.
 
-When the system is running, Cockpit is the control room. Open positions, recent decisions, risk status, agent activity. Every action is visible and every decision has a reason attached to it.
+**COCKPIT** — When the system is executing on your behalf, you see everything in real time.
+
+Every position. Every decision made and the rationale behind it. Every risk limit and how close you are to it. A glass box, not a black box.
 
 ---
 
 ## Vision
 
-The full vision is at https://project-01-terminal.vercel.app/vision
+https://project-01-terminal.vercel.app/vision
 
 ---
 
@@ -65,6 +48,7 @@ The full vision is at https://project-01-terminal.vercel.app/vision
 
 This platform is for informational and educational purposes only.
 Nothing produced by Project-01 constitutes financial advice, investment advice,
-or a recommendation to buy or sell any security. Always conduct your own due diligence
-and consult a qualified financial professional before making investment decisions.
+or a recommendation to buy or sell any security.
+Always conduct your own due diligence and consult a qualified financial professional
+before making investment decisions.
 Past performance of any security referenced is not indicative of future results.

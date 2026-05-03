@@ -1,128 +1,51 @@
-# ── Secrets & API Keys ──────────────────────────────────────────────────────
+# ── Secrets & credentials ────────────────────────────────────────────────────
 .env
 .env.*
 !.env.example
 *.key
 secrets.toml
 credentials.json
-api_keys.txt
 
-# ── Streamlit ────────────────────────────────────────────────────────────────
-.streamlit/secrets.toml
-.streamlit/
+# ── Claude Code ──────────────────────────────────────────────────────────────
+.claude/
 
-# ── DuckDB ───────────────────────────────────────────────────────────────────
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# ── Database ─────────────────────────────────────────────────────────────────
 *.duckdb
 *.duckdb.wal
 data/db/
-db/
-
-# ── Agent Prompts (kept in env / private repo) ───────────────────────────────
-prompts/
-*.prompt.txt
-*.prompt.md
-agents/prompts/
-config/prompts/*.txt
-config/prompts/*.md
-# README.md is explicitly NOT ignored — it is public documentation
 
 # ── Logs ─────────────────────────────────────────────────────────────────────
 *.log
 logs/
-*.log.*
 
-# ── n8n ──────────────────────────────────────────────────────────────────────
-.n8n/
-n8n_data/
-n8n-export/
-
-# ── Jupyter Notebooks ────────────────────────────────────────────────────────
-*.ipynb
-.ipynb_checkpoints/
-profile_default/
-ipython_config.py
-
-# ── Python Cache ─────────────────────────────────────────────────────────────
-__pycache__/
-*.py[cod]
-*$py.class
-*.pyo
-.Python
-
-# ── Virtual Environments ──────────────────────────────────────────────────────
-.venv/
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-.python-version
-
-# ── Distribution / Packaging ─────────────────────────────────────────────────
-build/
-dist/
-*.egg-info/
-*.egg
-MANIFEST
-wheels/
-share/python-wheels/
-.installed.cfg
-sdist/
-
-# ── Testing & Coverage ───────────────────────────────────────────────────────
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-coverage.xml
-*.cover
-.tox/
-.nox/
-.hypothesis/
-nosetests.xml
-
-# ── Type Checkers & Linters ──────────────────────────────────────────────────
-.mypy_cache/
-.dmypy.json
-dmypy.json
-.pyre/
-.pytype/
-.ruff_cache/
-
-# ── IDE & Editor Files ───────────────────────────────────────────────────────
+# ── IDE & OS ─────────────────────────────────────────────────────────────────
 .idea/
 .vscode/
-*.swp
-*.swo
-*~
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
 
-# Cursor
-.cursorignore
-.cursorindexingignore
+# ── Test & coverage ──────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
 
-# ── Package Manager Locks (optional — uncomment to ignore) ───────────────────
-# Pipfile.lock
-# poetry.lock
-# uv.lock
-
-# ── Misc ─────────────────────────────────────────────────────────────────────
-pip-log.txt
-pip-delete-this-directory.txt
-.cache/
-.pdm.toml
-.pdm-python
-.pdm-build/
-__pypackages__/
-cython_debug/
-.pypirc
-.pybuilder/
-target/
-instance/
-.scrapy
-docs/_build/
-/site
-celerybeat-schedule
-celerybeat.pid
-data/db/
+# ── Node (for any frontend tooling) ──────────────────────────────────────────
+node_modules/
+.next/
+docs .streamlit scripts/
