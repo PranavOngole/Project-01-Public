@@ -44,6 +44,14 @@ https://project-01-terminal.vercel.app/vision
 
 ---
 
+## Get in Touch
+
+If you are a serious investor who wants early access, a collaborator who sees where this is going, or someone who wants to talk about what comes next: reach out.
+
+[github.com/PranavOngole](https://github.com/PranavOngole)
+
+---
+
 ## Disclaimer
 
 This platform is for informational and educational purposes only.
