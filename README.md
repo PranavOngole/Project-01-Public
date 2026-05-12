@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/live%20demo-project--01--terminal-0f766e?style=flat-square)](https://project-01-terminal.vercel.app)
 &nbsp;[![Release](https://img.shields.io/badge/release-v0.1.2-1e3a8a?style=flat-square)](https://github.com/PranavOngole/Project-01-Public/releases/tag/v0.1.2)
-&nbsp;[![External Review](https://img.shields.io/badge/external%20review-CR--01%20cleared-7c2d12?style=flat-square)](./RELEASES/v0.1.2.md)
+&nbsp;[![External Review](https://img.shields.io/badge/external%20review-CR--01%20cleared-7c2d12?style=flat-square)](./audit_reports/CR-01_External_Code_Review_2026-05-12.md)
 
 **Investor with Intelligence.**
 
