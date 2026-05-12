@@ -1,5 +1,9 @@
 # Project-01
 
+[![Live Demo](https://img.shields.io/badge/live%20demo-project--01--terminal-0f766e?style=flat-square)](https://project-01-terminal.vercel.app)
+&nbsp;[![Release](https://img.shields.io/badge/release-v0.1.2-1e3a8a?style=flat-square)](https://github.com/PranavOngole/Project-01-Public/releases/tag/v0.1.2)
+&nbsp;[![External Review](https://img.shields.io/badge/external%20review-CR--01%20cleared-7c2d12?style=flat-square)](./RELEASES/v0.1.2.md)
+
 **Investor with Intelligence.**
 
 The markets generate more information than any human can process. Earnings transcripts, SEC filings, analyst revisions, insider moves, macro shifts, options flow — all of it arriving simultaneously, all of it demanding a decision. Most of it is noise. The rest is signal. The problem is knowing which is which.
@@ -41,6 +45,16 @@ Every position. Every decision made and the rationale behind it. Every risk limi
 ## Vision
 
 https://project-01-terminal.vercel.app/vision
+
+---
+
+## Release History
+
+Project-01 ships under a versioned release discipline. Every minor version carries a single-purpose theme, a list of outcomes, and a record of the gates that passed before merge.
+
+- **[v0.1.2](./RELEASES/v0.1.2.md)** — 2026-05-12. External code review response; all findings closed; production-trust verdict moved to GO.
+- Full timeline: [`CHANGELOG.md`](./CHANGELOG.md)
+- Long-form release notes: [`RELEASES/`](./RELEASES/)
 
 ---
 
