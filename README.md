@@ -63,7 +63,7 @@ Project-01 ships under a versioned release discipline. Every minor version carri
 
 ## Get in Touch
 
-If you are a serious investor who wants early access, a collaborator who sees where this is going, or someone who wants to talk about what comes next: reach out.
+The build is ongoing. If something here caught your attention, you know where to find me.
 
 [github.com/PranavOngole](https://github.com/PranavOngole)
 
