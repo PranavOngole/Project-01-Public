@@ -4,11 +4,12 @@
 &nbsp;[![Release](https://img.shields.io/badge/release-v0.1.4-1e3a8a?style=flat-square)](https://github.com/PranavOngole/Project-01-Public/releases/tag/v0.1.4)
 &nbsp;[![External Review](https://img.shields.io/badge/external%20review-CR--01%20cleared-7c2d12?style=flat-square)](./audit_reports/CR-01_External_Code_Review_2026-05-12.md)
 
-**Investor with Intelligence.**
+**You already had the conviction. This is the suit.**
 
-The markets generate more information than any human can process. Earnings transcripts, SEC filings, analyst revisions, insider moves, macro shifts, options flow - all of it arriving simultaneously, all of it demanding a decision. Most of it is noise. The rest is signal. The problem is knowing which is which.
-
-Project-01 translates that noise into intelligence. It surfaces what matters, explains what it means, and gives the investor the clarity to act - without the overhead of building a research desk.
+The analyst who read the footnotes.
+The quant who back-tested the signal.
+The auditor who never took management's word for it.
+An investment committee that answers to you.
 
 **Live:** https://project-01-terminal.vercel.app
 
@@ -16,9 +17,9 @@ Project-01 translates that noise into intelligence. It surfaces what matters, ex
 
 ## What It Is
 
-A research and execution platform that puts institutional-grade intelligence in front of the individual investor.
+A research platform that gives the individual investor the infrastructure a professional fund runs before committing capital.
 
-Not a signals service. Not a black box that places trades while you sleep. The investor remains the decision-maker. Project-01 is the infrastructure behind the decision - the research that would take a team of analysts half a day, delivered in seconds, organized so the most important thing is always the first thing you see.
+Not a signals service. Not a black box. Not a chatbot dressed up as a research tool. Project-01 is six specialized AI agents working in sequence before you decide. The fundamental analyst forms a view from the filing before touching the news. The quant validates whether the thesis holds in the data. The auditor checks the numbers before anything reaches you. Research that would take a team half a day, delivered in seconds, with the full reasoning chain intact.
 
 For investors who want to take positions with the same depth of conviction a professional fund would require: this is the tool.
 
