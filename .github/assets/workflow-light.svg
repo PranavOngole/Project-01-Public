@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 222" width="1000" height="222" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect width="1000" height="222" fill="#ffffff"/>
+<text x="36.0" y="42" font-size="12" font-weight="700" fill="#8b95a3" letter-spacing="1.5">01</text>
+<rect x="36.0" y="52" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><circle cx="51.0" cy="62.0" r="3.7" fill="none" stroke="#0f766e" stroke-width="1.6"/><path d="M 43.5 75.5 Q 43.5 67.5 51.0 67.5 Q 58.5 67.5 58.5 75.5" fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="36.0" y="108" font-size="14.5" font-weight="700" fill="#11151c">Human Strategy</text>
+<text x="36.0" y="130" font-size="10.6" fill="#5b6573">The user defines the</text>
+<text x="36.0" y="145" font-size="10.6" fill="#5b6573">thesis, guardrails, and</text>
+<text x="36.0" y="160" font-size="10.6" fill="#5b6573">appetite for risk.</text>
+<line x1="204.6" y1="67" x2="216.6" y2="67" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round"/>
+<polyline points="212.6,63 218.6,67 212.6,71" fill="none" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="227.6" y="42" font-size="12" font-weight="700" fill="#8b95a3" letter-spacing="1.5">02</text>
+<rect x="227.6" y="52" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><circle cx="240.6" cy="65.0" r="6.6" fill="none" stroke="#0f766e" stroke-width="1.7"/><line x1="245.4" y1="69.8" x2="251.6" y2="76.0" stroke="#0f766e" stroke-width="2" stroke-linecap="round"/>
+<text x="227.6" y="108" font-size="14.5" font-weight="700" fill="#11151c">Grounded Research</text>
+<text x="227.6" y="130" font-size="10.6" fill="#5b6573">Specialist agents gather</text>
+<text x="227.6" y="145" font-size="10.6" fill="#5b6573">evidence and refuse when</text>
+<text x="227.6" y="160" font-size="10.6" fill="#5b6573">sources are unavailable.</text>
+<line x1="396.2" y1="67" x2="408.2" y2="67" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round"/>
+<polyline points="404.2,63 410.2,67 404.2,71" fill="none" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="419.2" y="42" font-size="12" font-weight="700" fill="#8b95a3" letter-spacing="1.5">03</text>
+<rect x="419.2" y="52" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><rect x="424.7" y="66.0" width="4.6" height="10" rx="1" fill="#0f766e"/><rect x="431.9" y="61.0" width="4.6" height="15" rx="1" fill="#0f766e"/><rect x="439.09999999999997" y="57.0" width="4.6" height="19" rx="1" fill="#0f766e"/>
+<text x="419.2" y="108" font-size="14.5" font-weight="700" fill="#11151c">Valuation</text>
+<text x="419.2" y="130" font-size="10.6" fill="#5b6573">The system forms an</text>
+<text x="419.2" y="145" font-size="10.6" fill="#5b6573">independent financial view</text>
+<text x="419.2" y="160" font-size="10.6" fill="#5b6573">before reading outside</text>
+<text x="419.2" y="175" font-size="10.6" fill="#5b6573">narrative.</text>
+<line x1="587.8" y1="67" x2="599.8" y2="67" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round"/>
+<polyline points="595.8,63 601.8,67 595.8,71" fill="none" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="610.8" y="42" font-size="12" font-weight="700" fill="#8b95a3" letter-spacing="1.5">04</text>
+<rect x="610.8" y="52" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><path d="M 625.8 58.0 L 633.8 61.5 L 633.8 67.5 Q 633.8 74.5 625.8 77.0 Q 617.8 74.5 617.8 67.5 L 617.8 61.5 Z" fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round"/><polyline points="622.1999999999999,67.0 624.8,70.0 629.8,63.6" fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="610.8" y="108" font-size="14.5" font-weight="700" fill="#11151c">Audit Gates</text>
+<text x="610.8" y="130" font-size="10.6" fill="#5b6573">Contracts, health states,</text>
+<text x="610.8" y="145" font-size="10.6" fill="#5b6573">and release gates prevent</text>
+<text x="610.8" y="160" font-size="10.6" fill="#5b6573">fake confidence.</text>
+<line x1="779.4" y1="67" x2="791.4" y2="67" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round"/>
+<polyline points="787.4,63 793.4,67 787.4,71" fill="none" stroke="#c4cad2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="802.4" y="42" font-size="12" font-weight="700" fill="#8b95a3" letter-spacing="1.5">05</text>
+<rect x="802.4" y="52" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><path d="M 824.4 64.5 A 7 7 0 1 0 824.4 70.5" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round"/><polyline points="820.4,62.0 824.8,64.4 826.8,60.0" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="802.4" y="108" font-size="14.5" font-weight="700" fill="#11151c">Learning Loop</text>
+<text x="802.4" y="130" font-size="10.6" fill="#5b6573">Outcomes and skipped</text>
+<text x="802.4" y="145" font-size="10.6" fill="#5b6573">decisions become evidence</text>
+<text x="802.4" y="160" font-size="10.6" fill="#5b6573">for improving judgment.</text>
+</svg>

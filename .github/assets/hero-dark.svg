@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 452" width="1000" height="452" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect width="1000" height="452" fill="#0d1117"/>
+<rect x="36" y="35" width="44" height="34" rx="9" fill="none" stroke="#2dd4bf" stroke-width="1.6"/>
+<text x="58" y="58" font-size="16" font-weight="700" fill="#2dd4bf" text-anchor="middle">01</text>
+<text x="94" y="59" font-size="21" font-weight="700" fill="#e8edf3">Project-01</text>
+<text x="36" y="135" font-size="39" font-weight="800" fill="#e8edf3" letter-spacing="-0.6">Human judgment, amplified</text>
+<text x="36" y="181" font-size="39" font-weight="800" fill="#e8edf3" letter-spacing="-0.6">by specialist AI systems.</text>
+<text x="36" y="224" font-size="14.5" fill="#9aa4b1">Project-01 turns an investor's thesis into a disciplined research</text>
+<text x="36" y="247" font-size="14.5" fill="#9aa4b1">workflow: source-grounded research, independent valuation, audit</text>
+<text x="36" y="270" font-size="14.5" fill="#9aa4b1">gates, paper-trading guardrails, release discipline, and a learning</text>
+<text x="36" y="293" font-size="14.5" fill="#9aa4b1">loop. AI does the heavy lift. The human keeps the judgment.</text>
+<rect x="36" y="334" width="185" height="32" rx="16" fill="#161c25" stroke="#2a313c" stroke-width="1"/><circle cx="54" cy="350" r="3.4" fill="#2dd4bf"/><text x="67" y="354.5" font-size="12.5"><tspan font-weight="700" fill="#e8edf3">Live</tspan><tspan fill="#9aa4b1">  &#183;  Terminal demo</tspan></text>
+<rect x="233" y="334" width="199" height="32" rx="16" fill="#161c25" stroke="#2a313c" stroke-width="1"/><circle cx="251" cy="350" r="3.4" fill="#2dd4bf"/><text x="264" y="354.5" font-size="12.5"><tspan font-weight="700" fill="#e8edf3">CR-01</tspan><tspan fill="#9aa4b1">  &#183;  review cleared</tspan></text>
+<rect x="36" y="376" width="206" height="32" rx="16" fill="#161c25" stroke="#2a313c" stroke-width="1"/><circle cx="54" cy="392" r="3.4" fill="#2dd4bf"/><text x="67" y="396.5" font-size="12.5"><tspan font-weight="700" fill="#e8edf3">v0.1.4</tspan><tspan fill="#9aa4b1">  &#183;  latest release</tspan></text>
+<rect x="254" y="376" width="199" height="32" rx="16" fill="#161c25" stroke="#2a313c" stroke-width="1"/><circle cx="272" cy="392" r="3.4" fill="#2dd4bf"/><text x="285" y="396.5" font-size="12.5"><tspan font-weight="700" fill="#e8edf3">Paper-only</tspan><tspan fill="#9aa4b1">  &#183;  execution</tspan></text>
+<rect x="618" y="35" width="346" height="382" rx="16" fill="#151b23" stroke="#2a313c" stroke-width="1"/>
+<text x="644" y="74" font-size="15.5" font-weight="700" fill="#e8edf3">Project Ledger</text>
+<line x1="644" y1="90" x2="938" y2="90" stroke="#2a313c" stroke-width="1"/>
+<rect x="644" y="106" width="30" height="30" rx="8" fill="#0d1117" stroke="#2a313c" stroke-width="1"/><circle cx="659.0" cy="121.0" r="8.5" fill="none" stroke="#2dd4bf" stroke-width="1.6"/><circle cx="659.0" cy="121.0" r="2.8" fill="#2dd4bf"/>
+<text x="690" y="118" font-size="13.5" font-weight="700" fill="#e8edf3">Product</text>
+<text x="690" y="136" font-size="11" fill="#9aa4b1">Clear user problem, not a toy</text>
+<text x="690" y="151" font-size="11" fill="#9aa4b1">chatbot wrapper.</text>
+<rect x="644" y="183" width="30" height="30" rx="8" fill="#0d1117" stroke="#2a313c" stroke-width="1"/><polyline points="656.0,192.0 650.0,198.0 656.0,204.0" fill="none" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="662.0,192.0 668.0,198.0 662.0,204.0" fill="none" stroke="#2dd4bf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="690" y="195" font-size="13.5" font-weight="700" fill="#e8edf3">Systems</text>
+<text x="690" y="213" font-size="11" fill="#9aa4b1">Agent handoffs, contracts, refusal</text>
+<text x="690" y="228" font-size="11" fill="#9aa4b1">states, and audit trail.</text>
+<rect x="644" y="260" width="30" height="30" rx="8" fill="#0d1117" stroke="#2a313c" stroke-width="1"/><path d="M 659.0 266.0 L 667.0 269.5 L 667.0 275.5 Q 667.0 282.5 659.0 285.0 Q 651.0 282.5 651.0 275.5 L 651.0 269.5 Z" fill="none" stroke="#2dd4bf" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="690" y="272" font-size="13.5" font-weight="700" fill="#e8edf3">Risk</text>
+<text x="690" y="290" font-size="11" fill="#9aa4b1">Financial-adjacent work treated</text>
+<text x="690" y="305" font-size="11" fill="#9aa4b1">with gates and disclaimers.</text>
+<rect x="644" y="337" width="30" height="30" rx="8" fill="#0d1117" stroke="#2a313c" stroke-width="1"/><rect x="650.0" y="344.3" width="3.4" height="3.4" rx="0.8" fill="#2dd4bf"/><line x1="656.5" y1="346.0" x2="668.0" y2="346.0" stroke="#2dd4bf" stroke-width="1.7" stroke-linecap="round"/><rect x="650.0" y="350.3" width="3.4" height="3.4" rx="0.8" fill="#2dd4bf"/><line x1="656.5" y1="352.0" x2="668.0" y2="352.0" stroke="#2dd4bf" stroke-width="1.7" stroke-linecap="round"/><rect x="650.0" y="356.3" width="3.4" height="3.4" rx="0.8" fill="#2dd4bf"/><line x1="656.5" y1="358.0" x2="668.0" y2="358.0" stroke="#2dd4bf" stroke-width="1.7" stroke-linecap="round"/>
+<text x="690" y="349" font-size="13.5" font-weight="700" fill="#e8edf3">Process</text>
+<text x="690" y="367" font-size="11" fill="#9aa4b1">Versioned releases, review response,</text>
+<text x="690" y="382" font-size="11" fill="#9aa4b1">and documented tradeoffs.</text>
+</svg>

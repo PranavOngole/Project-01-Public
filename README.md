@@ -1,15 +1,17 @@
-# Project-01
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hero-dark.svg">
+  <img alt="Project-01 — Human judgment, amplified by specialist AI systems." src=".github/assets/hero-light.svg" width="100%">
+</picture>
 
-[![Live Demo](https://img.shields.io/badge/live%20demo-project--01--terminal-0f766e?style=flat-square)](https://project-01-terminal.vercel.app)
-&nbsp;[![Release](https://img.shields.io/badge/release-v0.1.4-1e3a8a?style=flat-square)](https://github.com/PranavOngole/Project-01-Public/releases/tag/v0.1.4)
-&nbsp;[![External Review](https://img.shields.io/badge/external%20review-CR--01%20cleared-7c2d12?style=flat-square)](./audit_reports/CR-01_External_Code_Review_2026-05-12.md)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/workflow-dark.svg">
+  <img alt="Workflow: Human Strategy, Grounded Research, Valuation, Audit Gates, Learning Loop." src=".github/assets/workflow-light.svg" width="100%">
+</picture>
 
-**You already had the conviction. This is the suit.**
-
-The analyst who read the footnotes.
-The quant who back-tested the signal.
-The auditor who never took management's word for it.
-An investment committee that answers to you.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/pillars-dark.svg">
+  <img alt="Release History, External Review, Public Boundary." src=".github/assets/pillars-light.svg" width="100%">
+</picture>
 
 **Live:** https://project-01-terminal.vercel.app
 

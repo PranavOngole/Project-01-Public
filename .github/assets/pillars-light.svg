@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 212" width="1000" height="212" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect width="1000" height="212" fill="#ffffff"/>
+<rect x="36.0" y="22" width="293.3333333333333" height="168" rx="14" fill="#f6f7f9" stroke="#e4e7eb" stroke-width="1"/>
+<rect x="60.0" y="46" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><circle cx="75.0" cy="61.0" r="9" fill="none" stroke="#0f766e" stroke-width="1.7"/><polyline points="75.0,55.8 75.0,61.0 79.2,64.0" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="60.0" y="112" font-size="15" font-weight="700" fill="#11151c">Release History</text>
+<text x="60.0" y="136" font-size="11" fill="#5b6573">Every minor version has a theme, outcome,</text>
+<text x="60.0" y="152" font-size="11" fill="#5b6573">and acceptance gate. The public repo shows</text>
+<text x="60.0" y="168" font-size="11" fill="#5b6573">the thinking behind the build.</text>
+<rect x="353.3333333333333" y="22" width="293.3333333333333" height="168" rx="14" fill="#f6f7f9" stroke="#e4e7eb" stroke-width="1"/>
+<rect x="377.3333333333333" y="46" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><polygon points="392.3,52.4 394.4,58.1 400.5,58.3 395.8,62.1 397.4,68.0 392.3,64.6 387.3,68.0 388.9,62.1 384.2,58.3 390.2,58.1" fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="377.3333333333333" y="112" font-size="15" font-weight="700" fill="#11151c">External Review</text>
+<text x="377.3333333333333" y="136" font-size="11" fill="#5b6573">CR-01 moved from findings to remediation,</text>
+<text x="377.3333333333333" y="152" font-size="11" fill="#5b6573">documenting how production trust improved</text>
+<text x="377.3333333333333" y="168" font-size="11" fill="#5b6573">instead of hiding the messy middle.</text>
+<rect x="670.6666666666666" y="22" width="293.3333333333333" height="168" rx="14" fill="#f6f7f9" stroke="#e4e7eb" stroke-width="1"/>
+<rect x="694.6666666666666" y="46" width="30" height="30" rx="8" fill="#ffffff" stroke="#e4e7eb" stroke-width="1"/><rect x="702.6666666666666" y="60.0" width="14" height="10.5" rx="2.2" fill="none" stroke="#0f766e" stroke-width="1.7"/><path d="M 705.4666666666666 60.0 L 705.4666666666666 56.0 Q 705.4666666666666 51.8 709.6666666666666 51.8 Q 713.8666666666667 51.8 713.8666666666667 56.0 L 713.8666666666667 60.0" fill="none" stroke="#0f766e" stroke-width="1.7"/><circle cx="709.6666666666666" cy="65.0" r="1.7" fill="#0f766e"/>
+<text x="694.6666666666666" y="112" font-size="15" font-weight="700" fill="#11151c">Public Boundary</text>
+<text x="694.6666666666666" y="136" font-size="11" fill="#5b6573">Private prompts and implementation stay</text>
+<text x="694.6666666666666" y="152" font-size="11" fill="#5b6573">private, but public contracts and examples</text>
+<text x="694.6666666666666" y="168" font-size="11" fill="#5b6573">show the architecture without leaking IP.</text>
+</svg>
