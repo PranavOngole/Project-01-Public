@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hero-dark.svg">
-  <img alt="Project-01 — Human judgment, amplified by specialist AI systems." src=".github/assets/hero-light.svg" width="100%">
+  <img alt="Project-01: Human judgment, amplified by specialist AI systems." src=".github/assets/hero-light.svg" width="100%">
 </picture>
 
 <picture>
@@ -19,9 +19,9 @@
 
 ## What It Is
 
-A research platform that gives the individual investor the infrastructure a professional fund runs before committing capital.
+Serious investment research has always been gated behind a seven-figure desk: a room of analysts, data terminals, a quant team. Project-01 puts that desk behind one login.
 
-Not a signals service. Not a black box. Not a chatbot dressed up as a research tool. Project-01 is six specialized AI agents working in sequence before you decide. The fundamental analyst forms a view from the filing before touching the news. The quant validates whether the thesis holds in the data. The auditor checks the numbers before anything reaches you. Research that would take a team half a day, delivered in seconds, with the full reasoning chain intact.
+Not a signals service. Not a black box. Not a chatbot dressed up as a research tool. Project-01 is six specialized AI agents working in sequence before you decide. The fundamental analyst forms a view from the filing before touching the news, and values the company as a distribution of thousands of simulated futures (growth, margins, discount rates) rather than a single number. The quant validates whether the thesis holds in the data. The auditor checks the numbers before anything reaches you. Research that would take a team half a day, delivered in seconds, with the full reasoning chain intact.
 
 For investors who want to take positions with the same depth of conviction a professional fund would require: this is the tool.
 
@@ -31,7 +31,7 @@ For investors who want to take positions with the same depth of conviction a pro
 
 **TERMINAL** - Pull up any ticker and get the complete picture on one screen.
 
-Price action with annotated events. Options flow and unusual activity. Insider and institutional moves. A peer comparison that shows where this company stands in its cohort. A fundamental verdict with intrinsic value estimate and risk flags. Everything you would want before making a decision - already pulled, already structured, already ranked by what matters most.
+Price action with annotated events. Options flow and unusual activity. Insider and institutional moves. A peer comparison that shows where this company stands in its cohort. A fundamental verdict with an intrinsic-value range and risk flags. Everything you would want before making a decision - already pulled, already structured, already ranked by what matters most.
 
 **STRATEGY** - Define your investment criteria once. The system executes against them.
 
@@ -60,6 +60,7 @@ Project-01 ships under a versioned release discipline. Every minor version carri
 - **[v0.1.2](./RELEASES/v0.1.2.md)** - 2026-05-12. External code review response; all findings closed; production-trust verdict moved to GO.
 - Full timeline: [`CHANGELOG.md`](./CHANGELOG.md)
 - Long-form release notes: [`RELEASES/`](./RELEASES/)
+- Where the project actually stands: [`STATUS.md`](./STATUS.md)
 
 ---
 
