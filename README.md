@@ -21,7 +21,7 @@
 
 Serious investment research has always been gated behind a seven-figure desk: a room of analysts, data terminals, a quant team. Project-01 puts that desk behind one login.
 
-Not a signals service. Not a black box. Not a chatbot dressed up as a research tool. Project-01 is six specialized AI agents working in sequence before you decide. The fundamental analyst forms a view from the filing before touching the news, and values the company as a distribution of thousands of simulated futures (growth, margins, discount rates) rather than a single number. The quant validates whether the thesis holds in the data. The auditor checks the numbers before anything reaches you. Research that would take a team half a day, delivered in seconds, with the full reasoning chain intact.
+Not a signals service. Not a black box. Not a chatbot dressed up as a research tool. Project-01 is six specialized AI agents working in sequence before you decide. The fundamental analyst forms a view from the filing before touching the news. The quant validates whether the thesis holds in the data. The auditor checks the numbers before anything reaches you. Research that would take a team half a day, delivered in seconds, with the full reasoning chain intact.
 
 For investors who want to take positions with the same depth of conviction a professional fund would require: this is the tool.
 
@@ -42,6 +42,16 @@ This is not automated trading that replaces judgment. It is systematic execution
 **COCKPIT** - When the system is executing on your behalf, you see everything in real time.
 
 Every position. Every decision made and the rationale behind it. Every risk limit and how close you are to it. A glass box, not a black box.
+
+---
+
+## Valuation
+
+A single intrinsic-value number is false comfort. It hides every assumption behind it, and the market almost never settles on one point.
+
+So Project-01 does not produce one. It runs the valuation thousands of times, each pass sampling the inputs that actually move the answer: revenue growth, margins, and the discount rate. What comes back is a distribution: the full range of what the company could be worth, with the central estimate, the odds around it, and the assumption driving most of the uncertainty all visible. You see how far the case can run in each direction, and exactly what you are betting on.
+
+Shipped in v0.1.3 as the P5 to P95 intrinsic-value band.
 
 ---
 
