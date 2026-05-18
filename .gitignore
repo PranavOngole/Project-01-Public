@@ -48,4 +48,8 @@ htmlcov/
 # ── Node (for any frontend tooling) ──────────────────────────────────────────
 node_modules/
 .next/
-docs .streamlit scripts/
+
+# ── Internal dirs (kept out of the public repo) ──────────────────────────────
+docs/
+scripts/
+.streamlit/
